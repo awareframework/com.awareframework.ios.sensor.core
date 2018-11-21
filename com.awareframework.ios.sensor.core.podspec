@@ -8,9 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = 'com.awareframework.ios.sensor.core'
-  s.version          = '0.2.16'
-  s.summary          = 'A short description of com.aware.ios.sensor.core.'
-
+  s.version          = '0.2.17'
+  s.summary          = 'com.awareframework.ios.sensor.core is a foundation library for developing your own sensor module on aware framework.'
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
 #   * Try to keep it short, snappy and to the point.
@@ -18,13 +17,13 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+com.awareframework.ios.sensor.core provides basic classes for developing your own sensor module on aware framework.
                        DESC
 
   s.homepage         = 'https://github.com/awareframework/com.aware.ios.sensor.core'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'Apache2', :file => 'LICENSE' }
-  s.author           = { 'tetujin' => 'tetujin@ht.sfc.keio.ac.jp' }
+  s.author           = { 'Yuuki Nishiyama' => 'yuuki.nishiyama@oulu.fi' }
   s.source           = { :git => 'https://github.com/awareframework/com.awareframework.ios.sensor.core.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/tetujin23'
 

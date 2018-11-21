@@ -35,3 +35,8 @@ Carthage/Build
 # `pod install` in .travis.yml
 #
 # Pods/
+
+Classes/.gitkeep
+Example/Podfile.lock
+Example/Pods/
+Example/com.awareframework.ios.sensor.core.xcworkspace/
