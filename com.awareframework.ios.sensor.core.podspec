@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'com.awareframework.ios.sensor.core'
-  s.version          = '0.2.17'
+  s.version          = '0.2.18'
   s.summary          = 'com.awareframework.ios.sensor.core is a foundation library for developing your own sensor module on aware framework.'
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -20,7 +20,7 @@ Pod::Spec.new do |s|
 com.awareframework.ios.sensor.core provides basic classes for developing your own sensor module on aware framework.
                        DESC
 
-  s.homepage         = 'https://github.com/awareframework/com.aware.ios.sensor.core'
+  s.homepage         = 'https://github.com/awareframework/com.awareframework.ios.sensor.core'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'Apache2', :file => 'LICENSE' }
   s.author           = { 'Yuuki Nishiyama' => 'yuuki.nishiyama@oulu.fi' }
