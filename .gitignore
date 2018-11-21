@@ -39,4 +39,4 @@ Carthage/Build
 Classes/.gitkeep
 Example/Podfile.lock
 Example/Pods/
-Example/com.awareframework.ios.sensor.core.xcworkspace/
+# Example/com.awareframework.ios.sensor.core.xcworkspace/

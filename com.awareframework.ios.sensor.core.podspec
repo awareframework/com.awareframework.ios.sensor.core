@@ -28,6 +28,8 @@ com.awareframework.ios.sensor.core provides basic classes for developing your ow
   # s.social_media_url = 'https://twitter.com/tetujin23'
 
   s.ios.deployment_target = '10.0'
+  
+  s.swift_version = '4.2'
 
   s.source_files = 'com.awareframework.ios.sensor.core/Classes/**/*'
   
