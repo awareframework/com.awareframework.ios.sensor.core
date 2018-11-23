@@ -7,12 +7,19 @@
 //
 
 import UIKit
+import com_awareframework_ios_sensor_core
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+    
+//        let manager = SensorManager.shared
+//        manager.addSensor(A())
+//        manager.addSensor(B())        
+        // manager.getSensors(with: B.classForCoder())
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -20,5 +27,13 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+}
+
+public class A:AwareSensor {
+    
+}
+
+public class B:AwareSensor {
+    
 }
 

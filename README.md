@@ -13,7 +13,7 @@ com.awareframework.ios.sensor.core provides a basic class for developing your ow
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
 ## Requirements
-iOS 10 or later OS.
+iOS 10 or later.
 
 ## Installation
 
