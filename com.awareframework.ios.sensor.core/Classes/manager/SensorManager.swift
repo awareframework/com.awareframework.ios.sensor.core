@@ -50,6 +50,15 @@ public class SensorManager: NSObject {
         }
     }
     
+    public func getSensor(with sensor:AwareSensor) -> AwareSensor? {
+        for s in sensors {
+            if s == sensor {
+                return s
+            }
+        }
+        return nil
+    }
+    
     public func getSensors(with type: AnyClass ) -> [AwareSensor]?{
         var foundSensors:Array<AwareSensor> = []
         for sensor in sensors {

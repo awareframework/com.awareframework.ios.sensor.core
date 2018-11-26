@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = 'com.awareframework.ios.sensor.core'
-  s.version       = '0.2.19'
-  s.summary          = 'com.awareframework.ios.sensor.core is a foundation library for developing your own sensor module on aware framework.'
+  s.version       = '0.3.0'
+  s.summary          = 'The Core Library of AWARE Framework iOS.'
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
 #   * Try to keep it short, snappy and to the point.
@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-com.awareframework.ios.sensor.core provides basic classes for developing your own sensor module on aware framework.
+com.awareframework.ios.sensor.core provides basic classes for developing your own sensor module on AWARE Framework.
                        DESC
 
   s.homepage         = 'https://github.com/awareframework/com.awareframework.ios.sensor.core'
@@ -41,9 +41,10 @@ com.awareframework.ios.sensor.core provides basic classes for developing your ow
   # s.frameworks = 'UIKit', 'MapKit'
   # s.frameworks = 'CoreLocation'
   # s.dependency 'AFNetworking', '~> 2.3'
-  s.dependency 'RealmSwift'
-  s.dependency 'ReachabilitySwift'
-  s.dependency 'Networking' #, '~> 4'
-  s.dependency 'SwiftyJSON'
+  
+  s.dependency 'RealmSwift', '~>3.11.2'
+  s.dependency 'ReachabilitySwift', '~>4.3.0'
+  s.dependency 'Networking', '~>4.4.0'
+  s.dependency 'SwiftyJSON', '~>4.2.0'
   
 end
