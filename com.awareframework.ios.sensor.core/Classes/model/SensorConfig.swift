@@ -29,7 +29,7 @@ open class SensorConfig{
         self.set(config: config)
     }
     
-    public func set(config:Dictionary<String,Any>){
+    open func set(config:Dictionary<String,Any>){
         if let enabled = config["enabled"] as? Bool{
             self.enabled = enabled
         }
