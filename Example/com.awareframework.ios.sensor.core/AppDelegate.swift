@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import com_awareframework_ios_sensor_core
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +17,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        print("first try")
+        print(AwareUtils.getCommonDeviceId())
+
+        print("second try")
+        print(AwareUtils.getCommonDeviceId())
+        
         return true
     }
 

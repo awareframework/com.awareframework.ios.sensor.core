@@ -11,15 +11,23 @@ import com_awareframework_ios_sensor_core
 
 class ViewController: UIViewController {
 
+    // var sensor:SampleSensor?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-    
-//        let manager = SensorManager.shared
-//        manager.addSensor(A())
-//        manager.addSensor(B())        
-        // manager.getSensors(with: B.classForCoder())
-        
+//        sensor = SampleSensor.init(SampleSensor.Config().apply{config in
+//            config.debug = true
+//            config.dbType = DatabaseType.REALM
+//        })
+//        sensor?.start()
+//        
+//        Timer.scheduledTimer(withTimeInterval: 10, repeats: true) { (timer) in
+//            print("start sync")
+//            if let uwSensor = self.sensor {
+//                uwSensor.sync(force: true)
+//            }
+//        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,12 +36,3 @@ class ViewController: UIViewController {
     }
 
 }
-
-public class A:AwareSensor {
-    
-}
-
-public class B:AwareSensor {
-    
-}
-

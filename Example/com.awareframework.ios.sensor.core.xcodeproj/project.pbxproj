@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F53338221B6C85F006D8813 /* SampleSensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F53338121B6C85F006D8813 /* SampleSensor.swift */; };
+		4F53338421B6C87F006D8813 /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F53338321B6C87F006D8813 /* SampleData.swift */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
@@ -31,6 +33,9 @@
 		38DAC6DD22E5E8BEC871F5F3 /* Pods-com.awareframework.ios.sensor.core_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-com.awareframework.ios.sensor.core_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-com.awareframework.ios.sensor.core_Tests/Pods-com.awareframework.ios.sensor.core_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		3BE23AD26F05D1BD68E2FBCC /* Pods-com.awareframework.ios.sensor.core_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-com.awareframework.ios.sensor.core_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-com.awareframework.ios.sensor.core_Example/Pods-com.awareframework.ios.sensor.core_Example.release.xcconfig"; sourceTree = "<group>"; };
 		4CAF43563E2A4AB4716B42DF /* com.awareframework.ios.sensor.core.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = com.awareframework.ios.sensor.core.podspec; path = ../com.awareframework.ios.sensor.core.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		4F53338121B6C85F006D8813 /* SampleSensor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleSensor.swift; sourceTree = "<group>"; };
+		4F53338321B6C87F006D8813 /* SampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
+		4FD9BEBA21B7C84A00F54261 /* com.awareframework.ios.sensor.core_Example.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = com.awareframework.ios.sensor.core_Example.entitlements; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* com.awareframework.ios.sensor.core_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = com.awareframework.ios.sensor.core_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -72,6 +77,7 @@
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
+				4FD9BEBA21B7C84A00F54261 /* com.awareframework.ios.sensor.core_Example.entitlements */,
 				607FACF51AFB993E008FA782 /* Podspec Metadata */,
 				607FACD21AFB9204008FA782 /* Example for com.awareframework.ios.sensor.core */,
 				607FACE81AFB9204008FA782 /* Tests */,
@@ -95,6 +101,8 @@
 			children = (
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
+				4F53338121B6C85F006D8813 /* SampleSensor.swift */,
+				4F53338321B6C87F006D8813 /* SampleData.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
@@ -214,6 +222,14 @@
 						CreatedOnToolsVersion = 6.3.1;
 						DevelopmentTeam = FH352PYMNC;
 						LastSwiftMigration = 1010;
+						SystemCapabilities = {
+							com.apple.HealthKit = {
+								enabled = 0;
+							};
+							com.apple.iCloud = {
+								enabled = 0;
+							};
+						};
 					};
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
@@ -346,7 +362,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
+				4F53338221B6C85F006D8813 /* SampleSensor.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+				4F53338421B6C87F006D8813 /* SampleData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
