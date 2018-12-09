@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4F53338221B6C85F006D8813 /* SampleSensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F53338121B6C85F006D8813 /* SampleSensor.swift */; };
 		4F53338421B6C87F006D8813 /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F53338321B6C87F006D8813 /* SampleData.swift */; };
+		4F89C87721BC75CE00CB1168 /* SampleData2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F89C87621BC75CE00CB1168 /* SampleData2.swift */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
@@ -35,6 +36,7 @@
 		4CAF43563E2A4AB4716B42DF /* com.awareframework.ios.sensor.core.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = com.awareframework.ios.sensor.core.podspec; path = ../com.awareframework.ios.sensor.core.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		4F53338121B6C85F006D8813 /* SampleSensor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleSensor.swift; sourceTree = "<group>"; };
 		4F53338321B6C87F006D8813 /* SampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
+		4F89C87621BC75CE00CB1168 /* SampleData2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleData2.swift; sourceTree = "<group>"; };
 		4FD9BEBA21B7C84A00F54261 /* com.awareframework.ios.sensor.core_Example.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = com.awareframework.ios.sensor.core_Example.entitlements; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* com.awareframework.ios.sensor.core_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = com.awareframework.ios.sensor.core_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
 				4F53338121B6C85F006D8813 /* SampleSensor.swift */,
 				4F53338321B6C87F006D8813 /* SampleData.swift */,
+				4F89C87621BC75CE00CB1168 /* SampleData2.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
@@ -363,6 +366,7 @@
 			files = (
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				4F53338221B6C85F006D8813 /* SampleSensor.swift in Sources */,
+				4F89C87721BC75CE00CB1168 /* SampleData2.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 				4F53338421B6C87F006D8813 /* SampleData.swift in Sources */,
 			);

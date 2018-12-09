@@ -8,6 +8,8 @@
 import UIKit
 import RealmSwift
 
+public typealias DbSyncCompletionHandler = (_ status:Bool, _ error:Error?) -> Void
+
 public class DbSyncConfig {
     
     public var removeAfterSync:Bool = true
@@ -17,6 +19,7 @@ public class DbSyncConfig {
     public var keepLastData:Bool    = false
     public var deviceId:String?     = nil
     public var debug:Bool           = false
+    public var completionHandler:DbSyncCompletionHandler? = nil
     
     public init() {
         
