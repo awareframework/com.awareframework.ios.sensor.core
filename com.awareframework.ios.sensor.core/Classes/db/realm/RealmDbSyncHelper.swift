@@ -49,10 +49,17 @@ open class RealmDbSyncHelper:URLSessionDataTask, URLSessionDelegate, URLSessionD
         self.completion = completion
         
         self.urlSession = {
-            let sessionConfig = URLSessionConfiguration.background(withIdentifier: "aware.sync.task.identifier.\(tableName)")
-            sessionConfig.allowsCellularAccess = true
-            sessionConfig.sharedContainerIdentifier = "aware.sync.task.shared.container.identifier"
-            return URLSession(configuration: sessionConfig, delegate: self, delegateQueue: nil)
+            if self.config.backgroundSession{
+                let sessionConfig = URLSessionConfiguration.background(withIdentifier: "aware.sync.task.identifier.\(tableName)")
+                sessionConfig.allowsCellularAccess = true
+                sessionConfig.sharedContainerIdentifier = "aware.sync.task.shared.container.identifier"
+                return URLSession(configuration: sessionConfig, delegate: self, delegateQueue: nil)
+            }else{
+                let sessionConfig = URLSessionConfiguration.default
+                sessionConfig.allowsCellularAccess = true
+                sessionConfig.sharedContainerIdentifier = "aware.sync.task.shared.container.identifier"
+                return URLSession(configuration: sessionConfig, delegate: self, delegateQueue: nil)
+            }
         }()
         
         urlSession?.getAllTasks(completionHandler: { (tasks) in
@@ -113,9 +120,7 @@ open class RealmDbSyncHelper:URLSessionDataTask, URLSessionDelegate, URLSessionD
                         request.setValue("application/json", forHTTPHeaderField: "Accept")
                         let task = session.dataTask(with: request) // dataTask(with: request)
                         
-                        //DispatchQueue.main.sync {
                         task.resume()
-                        //}
                     }
                 }
                 
@@ -209,8 +214,10 @@ open class RealmDbSyncHelper:URLSessionDataTask, URLSessionDelegate, URLSessionD
             // A sync process is succeed
             if endFlag {
                 if config.debug { print("[\(tableName)] All sync tasks is done!!!") }
-                if let comp = self.completion {
-                    comp(true, error)
+                if let callback = self.completion {
+                    DispatchQueue.main.async {
+                        callback(true, error)
+                    }
                 }else{
                     print("self.completion is `nil`")
                 }
@@ -221,8 +228,11 @@ open class RealmDbSyncHelper:URLSessionDataTask, URLSessionDelegate, URLSessionD
 //                    self.run()
 //                }
                 DispatchQueue.main.asyncAfter( deadline: DispatchTime.now() + 1 ) {
-                    let queue = OperationQueue()
-                    queue.addOperation{
+                    if let queue = self.config.dispatchQueue {
+                        queue.async {
+                            self.run(completion: self.completion)
+                        }
+                    }else{
                         self.run(completion: self.completion)
                     }
                 }
@@ -230,8 +240,10 @@ open class RealmDbSyncHelper:URLSessionDataTask, URLSessionDelegate, URLSessionD
         }else{
             //A sync process is failed
             if config.debug { print("[\(tableName)] A sync task is faild.") }
-            if let comp = self.completion {
-                comp(false, error)
+            if let callback = self.completion {
+                DispatchQueue.main.async {
+                    callback(false, error)
+                }
             }
         }
     }

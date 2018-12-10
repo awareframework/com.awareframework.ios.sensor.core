@@ -277,7 +277,7 @@ class TestsRealm: XCTestCase {
     var helper:RealmDbSyncHelper? = nil
     
     func testSyncHelpeer(){
-        
+        print(Thread.isMainThread)
         let sensor = AwareSensor()
         let config = SensorConfig()
         config.dbHost = "node.awareframework.com:1001"
@@ -297,14 +297,18 @@ class TestsRealm: XCTestCase {
                                             objectType: AwareObject.self, config: DbSyncConfig().apply{setting in
                                                 setting.batchSize = 1
                                                 setting.debug = true
+                                                setting.dispatchQueue = DispatchQueue(label: "com.awareframework.ios.sensor.core.syncTask")
         })
         helper?.run(completion: { (status, error) in
-            XCTAssertNil(error)
+            // The callback is always on the main thread
+            XCTAssertTrue(Thread.isMainThread)
+            // status: true(=success), false(=failure)
             XCTAssertTrue(status)
+            XCTAssertNil(error)
             expectation.fulfill()
         })
         
-        self.wait(for: [expectation], timeout: 30)
+        self.wait(for: [expectation], timeout: 180)
     }
     
     func testDbSyncManager(){

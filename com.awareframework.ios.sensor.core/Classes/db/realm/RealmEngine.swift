@@ -231,19 +231,21 @@ open class RealmEngine: Engine {
                     }
                 }
             }
+            let syncHelper = RealmDbSyncHelper.init(engine: self,
+                                                    host:   uwHost,
+                                                    tableName:  tableName,
+                                                    objectType: uwObjType,
+                                                    config: syncConfig)
+            self.syncHelpers.append(syncHelper)
             
-            // DispatchQueue(label: "com.GCD.privateSerialQueue").async {}
-            let queue = OperationQueue()
-            queue.addOperation { () -> Void in
-                let syncHelper = RealmDbSyncHelper.init(engine: self,
-                                                         host:   uwHost,
-                                                         tableName:  tableName,
-                                                         objectType: uwObjType,
-                                                         config: syncConfig)
+            if let queue = syncConfig.dispatchQueue {
+                queue.async {
+                    syncHelper.run(completion: syncConfig.completionHandler)
+                }
+            }else{
                 syncHelper.run(completion: syncConfig.completionHandler)
-                self.syncHelpers.append(syncHelper)
             }
-            
+
         }else{
             print("[Error][\(tableName)] 'Host Name' or 'Object Type' is nil. Please check the parapmeters.")
         }
