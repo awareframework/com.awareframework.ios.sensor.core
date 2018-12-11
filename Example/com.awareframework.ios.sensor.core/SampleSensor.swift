@@ -61,7 +61,7 @@ public class SampleSensor:AwareSensor {
         // print("sync")
         if let engine = self.dbEngine {
             engine.startSync(SampleData.TABLE_NAME, SampleData.self, DbSyncConfig().apply{ config in
-                // config.debug = true
+                config.debug = true
                 config.completionHandler = { (status, error) in
                     print(status)
                 }

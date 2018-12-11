@@ -406,7 +406,7 @@ class TestsRealm: XCTestCase {
         sensor.set(label: "label")
         sensor.sync(force: false)
         manager.addSensor(sensor)
-        XCTAssertEqual(sensor, manager.getSensor(with: "sample")!)
+        XCTAssertEqual(sensor, manager.getSensor(with: sensor.id)!)
         XCTAssertEqual(sensor, manager.getSensor(with: sensor)!)
         XCTAssertTrue(manager.isExist(with: "sample"))
         XCTAssertTrue(manager.isExist(with: sensor.classForCoder) )

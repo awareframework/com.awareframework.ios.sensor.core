@@ -12,13 +12,12 @@ import com_awareframework_ios_sensor_core
 class ViewController: UIViewController {
 
     var sensor:SampleSensor?
-    var sensor2:SampleSensor?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         //  Do any additional setup after loading the view, typically from a nib.
 //        sensor = SampleSensor.init(SampleSensor.Config().apply{config in
-//            // config.debug = true
+//            config.debug = true
 //            config.dbType = .REALM
 //            config.dbPath = "hoge"
 //            config.dbHost = "node.awareframework.com:1001"
@@ -29,10 +28,12 @@ class ViewController: UIViewController {
 //            self.sensor?.sync(force: true)
 //        }
 //        
-//        Timer.scheduledTimer(withTimeInterval: 10, repeats: true) { (timer) in
-//            print("start sync")
-//            self.sensor?.sync(force: true)
+//        if let engine = self.sensor?.dbEngine {
+//            for _ in 0..<80{
+//                engine.save(SampleData())
+//            }
 //        }
+//        sensor?.sync(force: true)
     }
 
     override func didReceiveMemoryWarning() {
