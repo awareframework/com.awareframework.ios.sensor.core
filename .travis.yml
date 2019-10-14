@@ -3,17 +3,25 @@ language: objective-c
 cache: cocoapods
 podfile: Example/Podfile
 before_install:
+- brew update
+- brew install carthage
+- brew outdated carthage || brew upgrade carthage
 - gem install cocoapods
 - pod repo update
 - pod install --project-directory=Example
+before_script:
+- carthage bootstrap
 script:
 - set -o pipefail && xcodebuild test -enableCodeCoverage YES -workspace Example/com.awareframework.ios.sensor.core.xcworkspace
   -scheme com.awareframework.ios.sensor.core-Example -sdk iphonesimulator12.1 -destination
   OS=12.1,name="iPhone X" ONLY_ACTIVE_ARCH=NO CODE_SIGNING_REQUIRED=NO -allowProvisioningUpdates
   | XCPRETTY
+before_deploy:
+- carthage build --archive
 deploy:
   provider: script
   script: "./scripts/release.sh"
+  skip_cleanup: true
   on:
     tags: true
 after_success:
