@@ -1,4 +1,4 @@
-osx_image: xcode10.1
+osx_image: xcode11.2
 language: objective-c
 cache: cocoapods
 podfile: Example/Podfile
@@ -13,8 +13,8 @@ before_script:
 - carthage bootstrap
 script:
 - set -o pipefail && xcodebuild test -enableCodeCoverage YES -workspace Example/com.awareframework.ios.sensor.core.xcworkspace
-  -scheme com.awareframework.ios.sensor.core-Example -sdk iphonesimulator12.1 -destination
-  OS=12.1,name="iPhone X" ONLY_ACTIVE_ARCH=NO CODE_SIGNING_REQUIRED=NO -allowProvisioningUpdates
+  -scheme com.awareframework.ios.sensor.core-Example -sdk iphonesimulator13.2 -destination
+  OS=13.2,name="iPhone X" ONLY_ACTIVE_ARCH=NO CODE_SIGNING_REQUIRED=NO -allowProvisioningUpdates
   | XCPRETTY
 before_deploy:
 - carthage build --archive
