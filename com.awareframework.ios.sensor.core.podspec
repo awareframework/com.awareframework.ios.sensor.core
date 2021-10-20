@@ -23,7 +23,7 @@ com.awareframework.ios.sensor.core provides basic classes for developing your ow
   s.homepage         = 'https://github.com/awareframework/com.awareframework.ios.sensor.core'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'Apache2', :file => 'LICENSE' }
-  s.author           = { 'Yuuki Nishiyama' => 'yuuki.nishiyama@oulu.fi' }
+  s.author           = { 'Yuuki Nishiyama' => 'yuukin@iis.u-tokyo.ac.jp' }
   s.source           = { :git => 'https://github.com/awareframework/com.awareframework.ios.sensor.core.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/tetujin23'
 
