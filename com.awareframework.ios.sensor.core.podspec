@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'com.awareframework.ios.sensor.core'
-  s.version          = '0.5.1'
+  s.version          = '0.5.2'
   s.summary          = 'The Core Library of AWARE Framework iOS.'
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -49,6 +49,6 @@ com.awareframework.ios.sensor.core provides basic classes for developing your ow
   s.dependency 'Networking', '~>4.4.0'
   s.dependency 'SwiftyJSON', '~>5.0.1'
   
-  s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES', 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'i386, x86_64' }
+  s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES', 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'i386' }
   
 end
