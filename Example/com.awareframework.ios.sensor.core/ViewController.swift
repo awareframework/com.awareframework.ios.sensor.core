@@ -22,17 +22,17 @@ class ViewController: UIViewController {
             config.dbHost = "node.awareframework.com:1001"
         })
         sensor?.start()
-//
-//        Timer.scheduledTimer(withTimeInterval: 5, repeats: true) { (timer) in
-//            self.sensor?.sync(force: true)
-//        }
-//        
-//        if let engine = self.sensor?.dbEngine {
-//            for _ in 0..<80{
-//                engine.save(SampleData())
-//            }
-//        }
-//        sensor?.sync(force: true)
+
+        Timer.scheduledTimer(withTimeInterval: 5, repeats: true) { (timer) in
+            self.sensor?.sync(force: true)
+        }
+        
+        if let engine = self.sensor?.dbEngine {
+            for _ in 0..<80{
+                engine.save(SampleData())
+            }
+        }
+        sensor?.sync(force: true)
     }
 
     override func didReceiveMemoryWarning() {

@@ -94,43 +94,75 @@ open class RealmDbSyncHelper:URLSessionDataTask, URLSessionDelegate, URLSessionD
                         }
                     }
                     
-                    //// Set a HTTP Body
-                    let timestamp = Int64(Date().timeIntervalSince1970/1000.0)
+                    
+                    
+                    /// set parameter
                     let deviceId = AwareUtils.getCommonDeviceId()
                     var requestStr = ""
-                    let requestParams: Dictionary<String, Any>
-                        = ["timestamp":timestamp,
-                           "deviceId":deviceId,
-                           "data":dataArray,
-                           "tableName":self.tableName]
                     do{
-                        let requestObject = try JSONSerialization.data(withJSONObject:requestParams)
-                        requestStr = String.init(data: requestObject, encoding: .utf8)!
-                        // requestStr = requestStr.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlUserAllowed)!
+                        let requestObject = try JSONSerialization.data(withJSONObject:dataArray)
+                        requestStr = "device_id=\(deviceId)&data=\(String(data: requestObject, encoding: .utf8)!)"                        // requestStr = requestStr.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlUserAllowed)!
                     }catch{
-                        print(error)
+                        if self.config.debug {
+                            print(error)
+                        }
                     }
-                    
-                    if self.config.debug {
-                        // print(requestStr)
-                    }
+
                     
                     let hostName = AwareUtils.cleanHostName(self.host)
                     
-                    let url = URL.init(string: "https://"+hostName+"/insert/")
+                    let url = URL.init(string: "https://"+hostName+"/"+self.tableName+"/insert")
                     if let unwrappedUrl = url, let session = self.urlSession {
                         var request = URLRequest.init(url: unwrappedUrl)
                         request.cachePolicy = .reloadIgnoringLocalAndRemoteCacheData
-                        request.httpBody = requestStr.data(using: .utf8)
+                        request.httpBody =  requestStr.data(using: .utf8)
                         request.timeoutInterval = 30
                         request.httpMethod = "POST"
                         request.allowsCellularAccess = true
-                        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-                        request.setValue("application/json", forHTTPHeaderField: "Accept")
                         let task = session.dataTask(with: request) // dataTask(with: request)
                         
                         task.resume()
                     }
+                    
+                    //////////////////////////
+                    
+                    //// Set a HTTP Body
+//                    let timestamp = Int64(Date().timeIntervalSince1970/1000.0)
+//                    let deviceId = AwareUtils.getCommonDeviceId()
+//                    var requestStr = ""
+//                    let requestParams: Dictionary<String, Any>
+//                        = ["timestamp":timestamp,
+//                           "deviceId":deviceId,
+//                           "data":dataArray,
+//                           "tableName":self.tableName]
+//                    do{
+//                        let requestObject = try JSONSerialization.data(withJSONObject:requestParams)
+//                        requestStr = String.init(data: requestObject, encoding: .utf8)!
+//                        // requestStr = requestStr.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlUserAllowed)!
+//                    }catch{
+//                        print(error)
+//                    }
+//
+//                    if self.config.debug {
+//                        // print(requestStr)
+//                    }
+//
+//                    let hostName = AwareUtils.cleanHostName(self.host)
+//
+//                    let url = URL.init(string: "https://"+hostName+"/insert/")
+//                    if let unwrappedUrl = url, let session = self.urlSession {
+//                        var request = URLRequest.init(url: unwrappedUrl)
+//                        request.cachePolicy = .reloadIgnoringLocalAndRemoteCacheData
+//                        request.httpBody = requestStr.data(using: .utf8)
+//                        request.timeoutInterval = 30
+//                        request.httpMethod = "POST"
+//                        request.allowsCellularAccess = true
+//                        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+//                        request.setValue("application/json", forHTTPHeaderField: "Accept")
+//                        let task = session.dataTask(with: request) // dataTask(with: request)
+//
+//                        task.resume()
+//                    }
                 }
                 
             }
