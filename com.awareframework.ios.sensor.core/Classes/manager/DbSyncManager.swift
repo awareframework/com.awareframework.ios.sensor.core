@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import Reachability
 
 open class DbSyncManager {
     

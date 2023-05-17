@@ -7,7 +7,6 @@
 
 import Foundation
 import RealmSwift
-import Reachability
 import CommonCrypto
 
 open class RealmEngine: Engine {
