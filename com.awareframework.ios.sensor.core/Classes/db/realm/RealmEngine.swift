@@ -220,9 +220,9 @@ open class RealmEngine: Engine {
         if let uwHost = self.config.host, let uwObjType = objectType {
             
             for helper in self.syncHelpers {
-                if let index = syncHelpers.index(of: helper) {
+                if let index = syncHelpers.firstIndex(of: helper) {
                     if helper.tableName == tableName {
-                        helper.cancel()
+                        helper.stop()
                         self.syncHelpers.remove(at: index)
                     }
                 }
@@ -265,12 +265,11 @@ open class RealmEngine: Engine {
 }
 
 enum CryptoAlgorithm {
-    case MD5, SHA1, SHA224, SHA256, SHA384, SHA512
+    case SHA1, SHA224, SHA256, SHA384, SHA512
     
     var digestLength: Int {
         var result: Int32 = 0
         switch self {
-        case .MD5:      result = CC_MD5_DIGEST_LENGTH
         case .SHA1:     result = CC_SHA1_DIGEST_LENGTH
         case .SHA224:   result = CC_SHA224_DIGEST_LENGTH
         case .SHA256:   result = CC_SHA256_DIGEST_LENGTH
@@ -282,7 +281,6 @@ enum CryptoAlgorithm {
 }
 
 extension String {
-    var md5:    String { return digest(string: self, algorithm: .MD5) }
     var sha1:   String { return digest(string: self, algorithm: .SHA1) }
     var sha224: String { return digest(string: self, algorithm: .SHA224) }
     var sha256: String { return digest(string: self, algorithm: .SHA256) }
@@ -295,7 +293,6 @@ extension String {
         if let cdata = string.cString(using: String.Encoding.utf8) {
             result = Array(repeating: 0, count: digestLength)
             switch algorithm {
-            case .MD5:      CC_MD5(cdata, CC_LONG(cdata.count-1), &result)
             case .SHA1:     CC_SHA1(cdata, CC_LONG(cdata.count-1), &result)
             case .SHA224:   CC_SHA224(cdata, CC_LONG(cdata.count-1), &result)
             case .SHA256:   CC_SHA256(cdata, CC_LONG(cdata.count-1), &result)

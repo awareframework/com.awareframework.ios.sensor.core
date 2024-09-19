@@ -10,7 +10,7 @@ import Foundation
 import RealmSwift
 import SwiftyJSON
 
-open class RealmDbSyncHelper:URLSessionDataTask, URLSessionDelegate, URLSessionDataDelegate, URLSessionTaskDelegate {
+open class RealmDbSyncHelper:NSObject, URLSessionDelegate, URLSessionDataDelegate, URLSessionTaskDelegate {
 
     // https://developer.apple.com/documentation/foundation/url_loading_system/downloading_files_in_the_background?language=objc
     // https://qiita.com/yimajo/items/a591cf1b47d45db2b6ca
@@ -123,46 +123,6 @@ open class RealmDbSyncHelper:URLSessionDataTask, URLSessionDelegate, URLSessionD
                         
                         task.resume()
                     }
-                    
-                    //////////////////////////
-                    
-                    //// Set a HTTP Body
-//                    let timestamp = Int64(Date().timeIntervalSince1970/1000.0)
-//                    let deviceId = AwareUtils.getCommonDeviceId()
-//                    var requestStr = ""
-//                    let requestParams: Dictionary<String, Any>
-//                        = ["timestamp":timestamp,
-//                           "deviceId":deviceId,
-//                           "data":dataArray,
-//                           "tableName":self.tableName]
-//                    do{
-//                        let requestObject = try JSONSerialization.data(withJSONObject:requestParams)
-//                        requestStr = String.init(data: requestObject, encoding: .utf8)!
-//                        // requestStr = requestStr.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlUserAllowed)!
-//                    }catch{
-//                        print(error)
-//                    }
-//
-//                    if self.config.debug {
-//                        // print(requestStr)
-//                    }
-//
-//                    let hostName = AwareUtils.cleanHostName(self.host)
-//
-//                    let url = URL.init(string: "https://"+hostName+"/insert/")
-//                    if let unwrappedUrl = url, let session = self.urlSession {
-//                        var request = URLRequest.init(url: unwrappedUrl)
-//                        request.cachePolicy = .reloadIgnoringLocalAndRemoteCacheData
-//                        request.httpBody = requestStr.data(using: .utf8)
-//                        request.timeoutInterval = 30
-//                        request.httpMethod = "POST"
-//                        request.allowsCellularAccess = true
-//                        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-//                        request.setValue("application/json", forHTTPHeaderField: "Accept")
-//                        let task = session.dataTask(with: request) // dataTask(with: request)
-//
-//                        task.resume()
-//                    }
                 }
                 
             }
@@ -314,9 +274,47 @@ open class RealmDbSyncHelper:URLSessionDataTask, URLSessionDelegate, URLSessionD
             }
         }
     }
-    
-    open override func cancel() {
-        self.stop()
-    }
 }
+
+
+
+//////////////////////////
+
+//// Set a HTTP Body
+//                    let timestamp = Int64(Date().timeIntervalSince1970/1000.0)
+//                    let deviceId = AwareUtils.getCommonDeviceId()
+//                    var requestStr = ""
+//                    let requestParams: Dictionary<String, Any>
+//                        = ["timestamp":timestamp,
+//                           "deviceId":deviceId,
+//                           "data":dataArray,
+//                           "tableName":self.tableName]
+//                    do{
+//                        let requestObject = try JSONSerialization.data(withJSONObject:requestParams)
+//                        requestStr = String.init(data: requestObject, encoding: .utf8)!
+//                        // requestStr = requestStr.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlUserAllowed)!
+//                    }catch{
+//                        print(error)
+//                    }
+//
+//                    if self.config.debug {
+//                        // print(requestStr)
+//                    }
+//
+//                    let hostName = AwareUtils.cleanHostName(self.host)
+//
+//                    let url = URL.init(string: "https://"+hostName+"/insert/")
+//                    if let unwrappedUrl = url, let session = self.urlSession {
+//                        var request = URLRequest.init(url: unwrappedUrl)
+//                        request.cachePolicy = .reloadIgnoringLocalAndRemoteCacheData
+//                        request.httpBody = requestStr.data(using: .utf8)
+//                        request.timeoutInterval = 30
+//                        request.httpMethod = "POST"
+//                        request.allowsCellularAccess = true
+//                        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+//                        request.setValue("application/json", forHTTPHeaderField: "Accept")
+//                        let task = session.dataTask(with: request) // dataTask(with: request)
+//
+//                        task.resume()
+//                    }
 

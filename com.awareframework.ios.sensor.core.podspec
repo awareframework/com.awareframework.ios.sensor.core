@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'com.awareframework.ios.sensor.core'
-  s.version          = '0.6.1'
+  s.version          = '0.6.2'
   s.summary          = 'The Core Library of AWARE Framework iOS.'
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -23,30 +23,36 @@ com.awareframework.ios.sensor.core provides basic classes for developing your ow
   s.homepage         = 'https://github.com/awareframework/com.awareframework.ios.sensor.core'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'Apache2', :file => 'LICENSE' }
-  s.author           = { 'Yuuki Nishiyama' => 'yuukin@iis.u-tokyo.ac.jp' }
+  s.author           = { 'Yuuki Nishiyama' => 'nishiyama@csis.u-tokyo.ac.jp' }
   s.source           = { :git => 'https://github.com/awareframework/com.awareframework.ios.sensor.core.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/tetujin23'
 
-  s.platform = :ios, '11.0'
-  s.ios.deployment_target  = '11.0'
-
-  s.swift_version = '4.2'
+  s.platform = :ios, '13.0'
+  s.ios.deployment_target     = '13.0'
+  
+  s.swift_version = '5'
 
   s.source_files = 'com.awareframework.ios.sensor.core/Classes/**/*'
   
-  # s.resource_bundles = {
-  #   'com.awareframework.ios.sensor.core' => ['com.awareframework.ios.sensor.core/Assets/*.png']
-  # }
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.frameworks = 'CoreLocation'
-  # s.dependency 'AFNetworking', '~> 2.3'
-  
-  s.dependency 'RealmSwift' , '~>10.39' #'~>3.19' #,  '~>3.12.0'
-  s.dependency 'Networking', '~>4.4.0'
+  s.dependency 'RealmSwift', '~>20.0.0'
+  s.dependency 'Networking', '~>5.1.0'
   s.dependency 'SwiftyJSON', '~>5.0.1'
   
   # s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES', 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'i386' }
+  s.pod_target_xcconfig = {
+    'APPLICATION_EXTENSION_API_ONLY' => 'YES',
+
+    'IPHONEOS_DEPLOYMENT_TARGET_1500' => '13.0',
+    'IPHONEOS_DEPLOYMENT_TARGET_1600' => '13.0',
+    'IPHONEOS_DEPLOYMENT_TARGET' => '$(IPHONEOS_DEPLOYMENT_TARGET_$(XCODE_VERSION_MAJOR))',
+    'MACOSX_DEPLOYMENT_TARGET_1500' => '10.13',
+    'MACOSX_DEPLOYMENT_TARGET_1600' => '10.13',
+    'MACOSX_DEPLOYMENT_TARGET' => '$(MACOSX_DEPLOYMENT_TARGET_$(XCODE_VERSION_MAJOR))',
+    'WATCHOS_DEPLOYMENT_TARGET_1500' => '4.0',
+    'WATCHOS_DEPLOYMENT_TARGET_1600' => '4.0',
+    'WATCHOS_DEPLOYMENT_TARGET' => '$(WATCHOS_DEPLOYMENT_TARGET_$(XCODE_VERSION_MAJOR))',
+    'TVOS_DEPLOYMENT_TARGET_1500' => '12.0',
+    'TVOS_DEPLOYMENT_TARGET_1600' => '12.0',
+    'TVOS_DEPLOYMENT_TARGET' => '$(TVOS_DEPLOYMENT_TARGET_$(XCODE_VERSION_MAJOR))',
+  }
   
 end

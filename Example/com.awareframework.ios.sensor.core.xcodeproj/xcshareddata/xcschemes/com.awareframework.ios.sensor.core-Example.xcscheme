@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "4E90C6A71AEB3859DA999CF7CE0B3852"
+               BlueprintIdentifier = "B2267C2D9D018961E49AA58CF3DC094C"
                BuildableName = "Networking.framework"
                BlueprintName = "Networking"
                ReferencedContainer = "container:Pods/Pods.xcodeproj">
@@ -28,7 +28,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "10AD4D50A7280B5D258BA262E096490E"
+               BlueprintIdentifier = "D89D5FBA37E87E078F5EDF9279EA08A8"
                BuildableName = "Pods_com_awareframework_ios_sensor_core_Example.framework"
                BlueprintName = "Pods-com.awareframework.ios.sensor.core_Example"
                ReferencedContainer = "container:Pods/Pods.xcodeproj">
@@ -42,7 +42,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C0CE360C603A985F3447C1AF51C1B41F"
+               BlueprintIdentifier = "C1428AF3112257000FBA916D0F601FBB"
                BuildableName = "Pods_com_awareframework_ios_sensor_core_Tests.framework"
                BlueprintName = "Pods-com.awareframework.ios.sensor.core_Tests"
                ReferencedContainer = "container:Pods/Pods.xcodeproj">
@@ -70,7 +70,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "BA1D7B1FAAF6A59FC1E04115498665B4"
+               BlueprintIdentifier = "68494F30B4A13F8E5E88BCCAEC25B0A4"
                BuildableName = "Realm.framework"
                BlueprintName = "Realm"
                ReferencedContainer = "container:Pods/Pods.xcodeproj">
@@ -84,7 +84,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9E83B02AAA6F4B4EE95CC07F9A34F14B"
+               BlueprintIdentifier = "782725687624F8665247B84AB581BEB1"
                BuildableName = "RealmSwift.framework"
                BlueprintName = "RealmSwift"
                ReferencedContainer = "container:Pods/Pods.xcodeproj">
@@ -98,7 +98,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "AA2ACC516C3150C071CEC7453438A076"
+               BlueprintIdentifier = "D118A6A04828FD3CDA8640CD2B6796D2"
                BuildableName = "SwiftyJSON.framework"
                BlueprintName = "SwiftyJSON"
                ReferencedContainer = "container:Pods/Pods.xcodeproj">
@@ -112,7 +112,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D094B8B9EA6298096B66339461CF0D25"
+               BlueprintIdentifier = "BC43C0ED8185876784A113C71CAB0D43"
                BuildableName = "com_awareframework_ios_sensor_core.framework"
                BlueprintName = "com.awareframework.ios.sensor.core"
                ReferencedContainer = "container:Pods/Pods.xcodeproj">
@@ -152,13 +152,22 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      shouldUseLaunchSchemeArgsEnv = "YES"
       codeCoverageEnabled = "YES"
-      onlyGenerateCoverageForSpecifiedTargets = "YES"
-      shouldUseLaunchSchemeArgsEnv = "YES">
+      onlyGenerateCoverageForSpecifiedTargets = "YES">
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "607FACCF1AFB9204008FA782"
+            BuildableName = "com.awareframework.ios.sensor.core_Example.app"
+            BlueprintName = "com.awareframework.ios.sensor.core_Example"
+            ReferencedContainer = "container:com.awareframework.ios.sensor.core.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <CodeCoverageTargets>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D094B8B9EA6298096B66339461CF0D25"
+            BlueprintIdentifier = "BC43C0ED8185876784A113C71CAB0D43"
             BuildableName = "com_awareframework_ios_sensor_core.framework"
             BlueprintName = "com.awareframework.ios.sensor.core"
             ReferencedContainer = "container:Pods/Pods.xcodeproj">
@@ -176,17 +185,6 @@
             </BuildableReference>
          </TestableReference>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-            BuildableName = "com.awareframework.ios.sensor.core_Example.app"
-            BlueprintName = "com.awareframework.ios.sensor.core_Example"
-            ReferencedContainer = "container:com.awareframework.ios.sensor.core.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
-      <AdditionalOptions>
-      </AdditionalOptions>
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
@@ -208,8 +206,6 @@
             ReferencedContainer = "container:com.awareframework.ios.sensor.core.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
-      <AdditionalOptions>
-      </AdditionalOptions>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"

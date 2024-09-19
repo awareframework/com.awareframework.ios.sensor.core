@@ -34,7 +34,7 @@ public class SensorManager: NSObject {
     
     public func removeSensors(with type: AnyClass ){
         for sensor in sensors {
-            if let index = sensors.index(of: sensor) {
+            if let index = sensors.firstIndex(of: sensor) {
                 if sensor.classForCoder == type {
                     sensors.remove(at: index)
                 }
@@ -44,7 +44,7 @@ public class SensorManager: NSObject {
     
     public func removeSensor(id:String){
         for sensor in sensors {
-            if let index = sensors.index(of: sensor) {
+            if let index = sensors.firstIndex(of: sensor) {
                 if sensor.id == id {
                     sensors.remove(at: index)
                 }
