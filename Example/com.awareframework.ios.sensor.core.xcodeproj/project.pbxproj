@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		44FC3F2F0681B9781637E0B8 /* Pods_com_awareframework_ios_sensor_core_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F77E7B56D5B85CAA98FC3798 /* Pods_com_awareframework_ios_sensor_core_Tests.framework */; };
+		4CDE079D9F45C87AE0229F7C /* Pods_com_awareframework_ios_sensor_core_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D35A53284A543813FB921791 /* Pods_com_awareframework_ios_sensor_core_Tests.framework */; };
 		4F53338221B6C85F006D8813 /* SampleSensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F53338121B6C85F006D8813 /* SampleSensor.swift */; };
 		4F53338421B6C87F006D8813 /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F53338321B6C87F006D8813 /* SampleData.swift */; };
 		4F89C87721BC75CE00CB1168 /* SampleData2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F89C87621BC75CE00CB1168 /* SampleData2.swift */; };
@@ -17,7 +17,7 @@
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
-		A0D76B8A7D821EECEAF195C3 /* Pods_com_awareframework_ios_sensor_core_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CD5471B10C38C26DE8D4B64 /* Pods_com_awareframework_ios_sensor_core_Example.framework */; };
+		875B800BA257D7F46721AB22 /* Pods_com_awareframework_ios_sensor_core_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02DA346E2CE0386764D555D0 /* Pods_com_awareframework_ios_sensor_core_Example.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,8 +31,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		02DA346E2CE0386764D555D0 /* Pods_com_awareframework_ios_sensor_core_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_com_awareframework_ios_sensor_core_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1FF85F73A4B4593E93744467 /* Pods-com.awareframework.ios.sensor.core_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-com.awareframework.ios.sensor.core_Example.debug.xcconfig"; path = "Target Support Files/Pods-com.awareframework.ios.sensor.core_Example/Pods-com.awareframework.ios.sensor.core_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		4CAF43563E2A4AB4716B42DF /* com.awareframework.ios.sensor.core.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = com.awareframework.ios.sensor.core.podspec; path = ../com.awareframework.ios.sensor.core.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		4D7EEE10F328653778529CF5 /* Pods-com.awareframework.ios.sensor.core_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-com.awareframework.ios.sensor.core_Example.release.xcconfig"; path = "Target Support Files/Pods-com.awareframework.ios.sensor.core_Example/Pods-com.awareframework.ios.sensor.core_Example.release.xcconfig"; sourceTree = "<group>"; };
+		4DE0CFB4404998844FA61024 /* Pods-com.awareframework.ios.sensor.core_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-com.awareframework.ios.sensor.core_Example.release.xcconfig"; path = "Target Support Files/Pods-com.awareframework.ios.sensor.core_Example/Pods-com.awareframework.ios.sensor.core_Example.release.xcconfig"; sourceTree = "<group>"; };
 		4F53338121B6C85F006D8813 /* SampleSensor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleSensor.swift; sourceTree = "<group>"; };
 		4F53338321B6C87F006D8813 /* SampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
 		4F89C87621BC75CE00CB1168 /* SampleData2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleData2.swift; sourceTree = "<group>"; };
@@ -49,11 +51,9 @@
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		6A7C93153F6D6E237B13FE2A /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		899DB16C16B232BBD069DB81 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		951CF65412512346CDF8029C /* Pods-com.awareframework.ios.sensor.core_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-com.awareframework.ios.sensor.core_Tests.debug.xcconfig"; path = "Target Support Files/Pods-com.awareframework.ios.sensor.core_Tests/Pods-com.awareframework.ios.sensor.core_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		9CD5471B10C38C26DE8D4B64 /* Pods_com_awareframework_ios_sensor_core_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_com_awareframework_ios_sensor_core_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C6CCEEEBA6EFE9AA71A53836 /* Pods-com.awareframework.ios.sensor.core_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-com.awareframework.ios.sensor.core_Example.debug.xcconfig"; path = "Target Support Files/Pods-com.awareframework.ios.sensor.core_Example/Pods-com.awareframework.ios.sensor.core_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		DF273C97C780848DF8D1D44B /* Pods-com.awareframework.ios.sensor.core_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-com.awareframework.ios.sensor.core_Tests.release.xcconfig"; path = "Target Support Files/Pods-com.awareframework.ios.sensor.core_Tests/Pods-com.awareframework.ios.sensor.core_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		F77E7B56D5B85CAA98FC3798 /* Pods_com_awareframework_ios_sensor_core_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_com_awareframework_ios_sensor_core_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		976ABD34B0364244963E8D3B /* Pods-com.awareframework.ios.sensor.core_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-com.awareframework.ios.sensor.core_Tests.debug.xcconfig"; path = "Target Support Files/Pods-com.awareframework.ios.sensor.core_Tests/Pods-com.awareframework.ios.sensor.core_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		B6F09A72A59D0C6167871E0E /* Pods-com.awareframework.ios.sensor.core_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-com.awareframework.ios.sensor.core_Tests.release.xcconfig"; path = "Target Support Files/Pods-com.awareframework.ios.sensor.core_Tests/Pods-com.awareframework.ios.sensor.core_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		D35A53284A543813FB921791 /* Pods_com_awareframework_ios_sensor_core_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_com_awareframework_ios_sensor_core_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,7 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A0D76B8A7D821EECEAF195C3 /* Pods_com_awareframework_ios_sensor_core_Example.framework in Frameworks */,
+				875B800BA257D7F46721AB22 /* Pods_com_awareframework_ios_sensor_core_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,31 +69,31 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				44FC3F2F0681B9781637E0B8 /* Pods_com_awareframework_ios_sensor_core_Tests.framework in Frameworks */,
+				4CDE079D9F45C87AE0229F7C /* Pods_com_awareframework_ios_sensor_core_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		244743B95E3D0D7BB8464857 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				02DA346E2CE0386764D555D0 /* Pods_com_awareframework_ios_sensor_core_Example.framework */,
+				D35A53284A543813FB921791 /* Pods_com_awareframework_ios_sensor_core_Tests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		5CA096E9ACDB0D0864C2579F /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				C6CCEEEBA6EFE9AA71A53836 /* Pods-com.awareframework.ios.sensor.core_Example.debug.xcconfig */,
-				4D7EEE10F328653778529CF5 /* Pods-com.awareframework.ios.sensor.core_Example.release.xcconfig */,
-				951CF65412512346CDF8029C /* Pods-com.awareframework.ios.sensor.core_Tests.debug.xcconfig */,
-				DF273C97C780848DF8D1D44B /* Pods-com.awareframework.ios.sensor.core_Tests.release.xcconfig */,
+				1FF85F73A4B4593E93744467 /* Pods-com.awareframework.ios.sensor.core_Example.debug.xcconfig */,
+				4DE0CFB4404998844FA61024 /* Pods-com.awareframework.ios.sensor.core_Example.release.xcconfig */,
+				976ABD34B0364244963E8D3B /* Pods-com.awareframework.ios.sensor.core_Tests.debug.xcconfig */,
+				B6F09A72A59D0C6167871E0E /* Pods-com.awareframework.ios.sensor.core_Tests.release.xcconfig */,
 			);
 			path = Pods;
-			sourceTree = "<group>";
-		};
-		60722A7E1E5B9DC274ADB622 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				9CD5471B10C38C26DE8D4B64 /* Pods_com_awareframework_ios_sensor_core_Example.framework */,
-				F77E7B56D5B85CAA98FC3798 /* Pods_com_awareframework_ios_sensor_core_Tests.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		607FACC71AFB9204008FA782 = {
@@ -105,7 +105,7 @@
 				607FACE81AFB9204008FA782 /* Tests */,
 				607FACD11AFB9204008FA782 /* Products */,
 				5CA096E9ACDB0D0864C2579F /* Pods */,
-				60722A7E1E5B9DC274ADB622 /* Frameworks */,
+				244743B95E3D0D7BB8464857 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -177,11 +177,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 607FACEF1AFB9204008FA782 /* Build configuration list for PBXNativeTarget "com.awareframework.ios.sensor.core_Example" */;
 			buildPhases = (
-				4BEC1FF63641AEFEAE872F2E /* [CP] Check Pods Manifest.lock */,
+				20732E15CC83C483D1351DDE /* [CP] Check Pods Manifest.lock */,
 				607FACCC1AFB9204008FA782 /* Sources */,
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
-				B73FBF7ADEBB82A14EB391E9 /* [CP] Embed Pods Frameworks */,
+				D3901CC1EA67EFD77DCF16C5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -196,7 +196,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 607FACF21AFB9204008FA782 /* Build configuration list for PBXNativeTarget "com.awareframework.ios.sensor.core_Tests" */;
 			buildPhases = (
-				550D3CC9B330C45F23EB1350 /* [CP] Check Pods Manifest.lock */,
+				13D6CB578CE28AD0E0CFE3DF /* [CP] Check Pods Manifest.lock */,
 				607FACE11AFB9204008FA782 /* Sources */,
 				607FACE21AFB9204008FA782 /* Frameworks */,
 				607FACE31AFB9204008FA782 /* Resources */,
@@ -284,29 +284,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		4BEC1FF63641AEFEAE872F2E /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-com.awareframework.ios.sensor.core_Example-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		550D3CC9B330C45F23EB1350 /* [CP] Check Pods Manifest.lock */ = {
+		13D6CB578CE28AD0E0CFE3DF /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -328,14 +306,35 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B73FBF7ADEBB82A14EB391E9 /* [CP] Embed Pods Frameworks */ = {
+		20732E15CC83C483D1351DDE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-com.awareframework.ios.sensor.core_Example-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D3901CC1EA67EFD77DCF16C5 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-com.awareframework.ios.sensor.core_Example/Pods-com.awareframework.ios.sensor.core_Example-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Networking/Networking.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
@@ -343,7 +342,6 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Networking.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
@@ -512,7 +510,7 @@
 		};
 		607FACF01AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C6CCEEEBA6EFE9AA71A53836 /* Pods-com.awareframework.ios.sensor.core_Example.debug.xcconfig */;
+			baseConfigurationReference = 1FF85F73A4B4593E93744467 /* Pods-com.awareframework.ios.sensor.core_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = FH352PYMNC;
@@ -528,7 +526,7 @@
 		};
 		607FACF11AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4D7EEE10F328653778529CF5 /* Pods-com.awareframework.ios.sensor.core_Example.release.xcconfig */;
+			baseConfigurationReference = 4DE0CFB4404998844FA61024 /* Pods-com.awareframework.ios.sensor.core_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = FH352PYMNC;
@@ -544,7 +542,7 @@
 		};
 		607FACF31AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 951CF65412512346CDF8029C /* Pods-com.awareframework.ios.sensor.core_Tests.debug.xcconfig */;
+			baseConfigurationReference = 976ABD34B0364244963E8D3B /* Pods-com.awareframework.ios.sensor.core_Tests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
@@ -567,7 +565,7 @@
 		};
 		607FACF41AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DF273C97C780848DF8D1D44B /* Pods-com.awareframework.ios.sensor.core_Tests.release.xcconfig */;
+			baseConfigurationReference = B6F09A72A59D0C6167871E0E /* Pods-com.awareframework.ios.sensor.core_Tests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;

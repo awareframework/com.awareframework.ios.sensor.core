@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'com.awareframework.ios.sensor.core'
-  s.version          = '0.7.1'
+  s.version          = '0.7.2'
   s.summary          = 'The Core Library of AWARE Framework iOS.'
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -34,25 +34,25 @@ com.awareframework.ios.sensor.core provides basic classes for developing your ow
   s.source_files = 'com.awareframework.ios.sensor.core/Classes/**/*'
   
   s.dependency 'RealmSwift', '~>20.0.0'
-  s.dependency 'Networking', '~>5.1.0'
-  s.dependency 'SwiftyJSON', '~>5.0.1'
+#  s.dependency 'Networking', '~>5.1.0'
+  s.dependency 'SwiftyJSON', '~>5.0.2'
   
   # s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES', 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'i386' }
-  s.pod_target_xcconfig = {
-    'APPLICATION_EXTENSION_API_ONLY' => 'YES',
-
-    'IPHONEOS_DEPLOYMENT_TARGET_1500' => '13.0',
-    'IPHONEOS_DEPLOYMENT_TARGET_1600' => '13.0',
-    'IPHONEOS_DEPLOYMENT_TARGET' => '$(IPHONEOS_DEPLOYMENT_TARGET_$(XCODE_VERSION_MAJOR))',
-    'MACOSX_DEPLOYMENT_TARGET_1500' => '10.13',
-    'MACOSX_DEPLOYMENT_TARGET_1600' => '10.13',
-    'MACOSX_DEPLOYMENT_TARGET' => '$(MACOSX_DEPLOYMENT_TARGET_$(XCODE_VERSION_MAJOR))',
-    'WATCHOS_DEPLOYMENT_TARGET_1500' => '4.0',
-    'WATCHOS_DEPLOYMENT_TARGET_1600' => '4.0',
-    'WATCHOS_DEPLOYMENT_TARGET' => '$(WATCHOS_DEPLOYMENT_TARGET_$(XCODE_VERSION_MAJOR))',
-    'TVOS_DEPLOYMENT_TARGET_1500' => '12.0',
-    'TVOS_DEPLOYMENT_TARGET_1600' => '12.0',
-    'TVOS_DEPLOYMENT_TARGET' => '$(TVOS_DEPLOYMENT_TARGET_$(XCODE_VERSION_MAJOR))',
-  }
+#  s.pod_target_xcconfig = {
+#    'APPLICATION_EXTENSION_API_ONLY' => 'YES',
+#
+#    'IPHONEOS_DEPLOYMENT_TARGET_1500' => '13.0',
+#    'IPHONEOS_DEPLOYMENT_TARGET_1600' => '13.0',
+#    'IPHONEOS_DEPLOYMENT_TARGET' => '$(IPHONEOS_DEPLOYMENT_TARGET_$(XCODE_VERSION_MAJOR))',
+#    'MACOSX_DEPLOYMENT_TARGET_1500' => '10.13',
+#    'MACOSX_DEPLOYMENT_TARGET_1600' => '10.13',
+#    'MACOSX_DEPLOYMENT_TARGET' => '$(MACOSX_DEPLOYMENT_TARGET_$(XCODE_VERSION_MAJOR))',
+#    'WATCHOS_DEPLOYMENT_TARGET_1500' => '4.0',
+#    'WATCHOS_DEPLOYMENT_TARGET_1600' => '4.0',
+#    'WATCHOS_DEPLOYMENT_TARGET' => '$(WATCHOS_DEPLOYMENT_TARGET_$(XCODE_VERSION_MAJOR))',
+#    'TVOS_DEPLOYMENT_TARGET_1500' => '12.0',
+#    'TVOS_DEPLOYMENT_TARGET_1600' => '12.0',
+#    'TVOS_DEPLOYMENT_TARGET' => '$(TVOS_DEPLOYMENT_TARGET_$(XCODE_VERSION_MAJOR))',
+#  }
   
 end
