@@ -41,10 +41,6 @@ open class Engine: EngineProtocal {
 
     open var config:EngineConfig = EngineConfig()
     
-    private init(){
-
-    }
-    
     public init(_ config: EngineConfig){
         self.config = config
     }
@@ -89,7 +85,7 @@ open class Engine: EngineProtocal {
             case DatabaseType.REALM:
                 return RealmEngine.init(self.config)
             case DatabaseType.NONE:
-                return Engine.init()
+                return Engine.init(EngineConfig())
             }
         }
     }
