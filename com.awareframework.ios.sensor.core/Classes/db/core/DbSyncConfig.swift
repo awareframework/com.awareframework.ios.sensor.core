@@ -23,6 +23,7 @@ public class DbSyncConfig {
     //  DispatchQueue(label: "someTask", attributes: .concurrent)
     public var dispatchQueue:DispatchQueue? = nil
     public var backgroundSession    = true
+    public var compactDataFormat    = false
     
     public init() {
         

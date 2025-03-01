@@ -30,7 +30,11 @@ open class RealmDbSyncHelper:NSObject, URLSessionDelegate, URLSessionDataDelegat
     var filter = ""
     var completion:DbSyncCompletionHandler? = nil
     
-    public init(engine:RealmEngine, host:String, tableName:String, objectType:Object.Type, config:DbSyncConfig){
+    public init(engine:RealmEngine,
+                host:String,
+                tableName:String,
+                objectType:Object.Type,
+                config:DbSyncConfig){
         self.engine     = engine
         self.host       = host
         self.tableName  = tableName
@@ -100,8 +104,34 @@ open class RealmDbSyncHelper:NSObject, URLSessionDelegate, URLSessionDataDelegat
                     let deviceId = AwareUtils.getCommonDeviceId()
                     var requestStr = ""
                     do{
-                        let requestObject = try JSONSerialization.data(withJSONObject:dataArray)
-                        requestStr = "device_id=\(deviceId)&data=\(String(data: requestObject, encoding: .utf8)!)"                        // requestStr = requestStr.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlUserAllowed)!
+                        var data = ""
+                        // compact format
+                        if (self.config.compactDataFormat) {
+                            var aggregatedData: [String: [Any]] = [:]
+                            for dict in dataArray {
+                                for (key, value) in dict {
+                                    /// Remove duplicated information and convert shape
+                                    /// [{"key1":1,"key2":1}, {"key1":2,"key2":2}, ...]
+                                    /// ->
+                                    /// {"key1":[1,2,...], "key2":"[1,2,...]}
+                                    if (key != "os" &&
+                                        key != "jsonVersion" &&
+                                        key != "deviceId" &&
+                                        key != "timezone") {
+                                        aggregatedData[key, default: []].append(value)
+                                    }
+                                }
+                            }
+                            let requestObject = try JSONSerialization.data(withJSONObject:aggregatedData)
+                            data = String(data: requestObject, encoding: .utf8)!
+                        // normal format
+                        }else{
+                            let requestObject = try JSONSerialization.data(withJSONObject:dataArray)
+                            data = String(data: requestObject, encoding: .utf8)!
+                        }
+                        
+                        /// Get the final part of request body
+                        requestStr = "device_id=\(deviceId)&data=\(data)"
                     }catch{
                         if self.config.debug {
                             print(error)
@@ -114,13 +144,12 @@ open class RealmDbSyncHelper:NSObject, URLSessionDelegate, URLSessionDataDelegat
                     let url = URL.init(string: "https://"+hostName+"/"+self.tableName+"/insert")
                     if let unwrappedUrl = url, let session = self.urlSession {
                         var request = URLRequest.init(url: unwrappedUrl)
-                        request.cachePolicy = .reloadIgnoringLocalAndRemoteCacheData
-                        request.httpBody =  requestStr.data(using: .utf8)
+                        request.cachePolicy     = .reloadIgnoringLocalAndRemoteCacheData
+                        request.httpBody        =  requestStr.data(using: .utf8)
                         request.timeoutInterval = 30
-                        request.httpMethod = "POST"
+                        request.httpMethod      = "POST"
                         request.allowsCellularAccess = true
-                        let task = session.dataTask(with: request) // dataTask(with: request)
-                        
+                        let task = session.dataTask(with: request)
                         task.resume()
                     }
                 }
