@@ -30,11 +30,11 @@ open class RealmDbSyncHelper:NSObject, URLSessionDelegate, URLSessionDataDelegat
     var filter = ""
     var completion:DbSyncCompletionHandler? = nil
     
-    public init(engine:RealmEngine,
-                host:String,
-                tableName:String,
-                objectType:Object.Type,
-                config:DbSyncConfig){
+    var progress:Double = 0.0
+    var currentNumOfCandidates:Int = 0
+    var originalNumOfCandidates:Int = 0
+    
+    public init(engine:RealmEngine, host:String, tableName:String, objectType:Object.Type, config:DbSyncConfig){
         self.engine     = engine
         self.host       = host
         self.tableName  = tableName
@@ -68,18 +68,32 @@ open class RealmDbSyncHelper:NSObject, URLSessionDelegate, URLSessionDataDelegat
         urlSession?.getAllTasks(completionHandler: { (tasks) in
             if tasks.count == 0 {
                 if let unwrappedCandidates = self.engine.fetch(self.objectType, self.filter) as? Results<Object>{
+
+                    if self.originalNumOfCandidates == 0 {
+                        self.originalNumOfCandidates = unwrappedCandidates.count
+                    }
+                    self.currentNumOfCandidates = unwrappedCandidates.count
+
                     
                     if self.config.debug {
-                        print("AWARE::Core", self.tableName, "Data count = \(unwrappedCandidates.count)")
+                        print("AWARE::Core", self.tableName,
+                              "Data count = \(unwrappedCandidates.count)")
                     }
                     
                     if unwrappedCandidates.count == 0 {
+                        if (self.config.debug) {
+                            print("AWARE::Core", self.tableName, "A sync process is done: No Data")
+                        }
+                        if let pCallback = self.config.progressHandler {
+                            DispatchQueue.main.async {
+                                pCallback(1.0, nil)
+                            }
+                        }
                         if let callback = self.completion {
                             DispatchQueue.main.async {
                                 callback(true, nil)
                             }
                         }
-                        print("AWARE::Core", self.tableName, "A sync process is done: No Data")
                         return
                     }
                     
@@ -100,37 +114,29 @@ open class RealmDbSyncHelper:NSObject, URLSessionDelegate, URLSessionDataDelegat
                     
                     
                     
+                    
                     /// set parameter
                     let deviceId = AwareUtils.getCommonDeviceId()
                     var requestStr = ""
                     do{
                         var data = ""
-                        // compact format
                         if (self.config.compactDataFormat) {
                             var aggregatedData: [String: [Any]] = [:]
                             for dict in dataArray {
                                 for (key, value) in dict {
-                                    /// Remove duplicated information and convert shape
-                                    /// [{"key1":1,"key2":1}, {"key1":2,"key2":2}, ...]
-                                    /// ->
-                                    /// {"key1":[1,2,...], "key2":"[1,2,...]}
-                                    if (key != "os" &&
-                                        key != "jsonVersion" &&
-                                        key != "deviceId" &&
-                                        key != "timezone") {
+                                    if (key != "os" && key != "jsonVersion" && key != "deviceId" && key != "timezone") {
                                         aggregatedData[key, default: []].append(value)
                                     }
                                 }
                             }
                             let requestObject = try JSONSerialization.data(withJSONObject:aggregatedData)
                             data = String(data: requestObject, encoding: .utf8)!
-                        // normal format
                         }else{
                             let requestObject = try JSONSerialization.data(withJSONObject:dataArray)
                             data = String(data: requestObject, encoding: .utf8)!
                         }
                         
-                        /// Get the final part of request body
+                        /// 最終的に取得するPOSTのBODY部分
                         requestStr = "device_id=\(deviceId)&data=\(data)"
                     }catch{
                         if self.config.debug {
@@ -144,12 +150,13 @@ open class RealmDbSyncHelper:NSObject, URLSessionDelegate, URLSessionDataDelegat
                     let url = URL.init(string: "https://"+hostName+"/"+self.tableName+"/insert")
                     if let unwrappedUrl = url, let session = self.urlSession {
                         var request = URLRequest.init(url: unwrappedUrl)
-                        request.cachePolicy     = .reloadIgnoringLocalAndRemoteCacheData
-                        request.httpBody        =  requestStr.data(using: .utf8)
+                        request.cachePolicy = .reloadIgnoringLocalAndRemoteCacheData
+                        request.httpBody =  requestStr.data(using: .utf8)
                         request.timeoutInterval = 30
-                        request.httpMethod      = "POST"
+                        request.httpMethod = "POST"
                         request.allowsCellularAccess = true
-                        let task = session.dataTask(with: request)
+                        let task = session.dataTask(with: request) // dataTask(with: request)
+                        
                         task.resume()
                     }
                 }
@@ -197,12 +204,14 @@ open class RealmDbSyncHelper:NSObject, URLSessionDelegate, URLSessionDataDelegat
              *{"status":false,"message":"Not found"} with error code 404
              */
             do {
-                let json = try JSON.init(data: receivedData)
-                if json["status"] == 404 {
-                    responseState = false
-                }else{
-                    // normal condition
-                    responseState = true
+                if (!receivedData.isEmpty) {
+                    let json = try JSON.init(data: receivedData)
+                    if json["status"] == 404 {
+                        responseState = false
+                    }else{
+                        // normal condition
+                        responseState = true
+                    }
                 }
             }catch {
                 if ( config.debug ) {
@@ -244,6 +253,13 @@ open class RealmDbSyncHelper:NSObject, URLSessionDelegate, URLSessionDataDelegat
             // A sync process is succeed
             if endFlag {
                 if config.debug { print("AWARE::Core","A sync process (\(tableName)) is done!") }
+                
+                if let pCallback = self.config.progressHandler {
+                    DispatchQueue.main.async {
+                        pCallback(1, nil)
+                    }
+                }
+                
                 if let callback = self.completion {
                     DispatchQueue.main.async {
                         callback(true, error)
@@ -253,11 +269,14 @@ open class RealmDbSyncHelper:NSObject, URLSessionDelegate, URLSessionDataDelegat
                 }
             }else{
                 if config.debug { print("AWARE::Core","A sync task(\(tableName)) is done. Execute a next sync task.") }
-                // Continue the sync-process
-//                Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { (timer) in
-//                    self.run()
-//                }
                 DispatchQueue.main.asyncAfter( deadline: DispatchTime.now() + 1 ) {
+                    if let pCallback = self.config.progressHandler {
+                        let p = 1.0 - (Double(self.currentNumOfCandidates)/Double(self.originalNumOfCandidates))
+                        DispatchQueue.main.async{
+                            pCallback(p, nil)
+                        }
+                    }
+                    
                     if let queue = self.config.dispatchQueue {
                         queue.async {
                             self.run(completion: self.completion)

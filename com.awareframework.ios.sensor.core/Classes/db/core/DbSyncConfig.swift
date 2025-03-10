@@ -9,21 +9,23 @@ import UIKit
 import RealmSwift
 
 public typealias DbSyncCompletionHandler = (_ status:Bool, _ error:Error?) -> Void
+public typealias DbSyncProgressHandler = (_ progress:Double, _ error:Error?) -> Void
 
 public class DbSyncConfig {
     
     public var removeAfterSync:Bool = true
-    public var batchSize:Int        = 100
+    public var batchSize:Int        = 1000
     public var markAsSynced:Bool    = false
     public var skipSyncedData:Bool  = false
     public var keepLastData:Bool    = false
     public var deviceId:String?     = nil
     public var debug:Bool           = false
     public var completionHandler:DbSyncCompletionHandler? = nil
+    public var progressHandler:DbSyncProgressHandler? = nil
     //  DispatchQueue(label: "someTask", attributes: .concurrent)
     public var dispatchQueue:DispatchQueue? = nil
     public var backgroundSession    = true
-    public var compactDataFormat    = false
+    public var compactDataFormat    = true
     
     public init() {
         
