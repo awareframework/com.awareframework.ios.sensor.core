@@ -26,8 +26,8 @@ com.awareframework.ios.sensor.core provides basic classes for developing your ow
   s.author           = { 'Yuuki Nishiyama' => 'nishiyama@csis.u-tokyo.ac.jp' }
   s.source           = { :git => 'https://github.com/awareframework/com.awareframework.ios.sensor.core.git', :tag => s.version.to_s }
 
-  s.platform = :ios, '12.0'
-  s.ios.deployment_target     = '12.0'
+  s.platform = :ios, '13.0'
+  s.ios.deployment_target     = '13.0'
   
   s.swift_version = '5'
 
@@ -35,23 +35,5 @@ com.awareframework.ios.sensor.core provides basic classes for developing your ow
   
   s.dependency 'RealmSwift', '~>20.0.0'
   s.dependency 'SwiftyJSON', '~>5.0.2'
-  
-  # s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES', 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'i386' }
-#  s.pod_target_xcconfig = {
-#    'APPLICATION_EXTENSION_API_ONLY' => 'YES',
-#
-#    'IPHONEOS_DEPLOYMENT_TARGET_1500' => '13.0',
-#    'IPHONEOS_DEPLOYMENT_TARGET_1600' => '13.0',
-#    'IPHONEOS_DEPLOYMENT_TARGET' => '$(IPHONEOS_DEPLOYMENT_TARGET_$(XCODE_VERSION_MAJOR))',
-#    'MACOSX_DEPLOYMENT_TARGET_1500' => '10.13',
-#    'MACOSX_DEPLOYMENT_TARGET_1600' => '10.13',
-#    'MACOSX_DEPLOYMENT_TARGET' => '$(MACOSX_DEPLOYMENT_TARGET_$(XCODE_VERSION_MAJOR))',
-#    'WATCHOS_DEPLOYMENT_TARGET_1500' => '4.0',
-#    'WATCHOS_DEPLOYMENT_TARGET_1600' => '4.0',
-#    'WATCHOS_DEPLOYMENT_TARGET' => '$(WATCHOS_DEPLOYMENT_TARGET_$(XCODE_VERSION_MAJOR))',
-#    'TVOS_DEPLOYMENT_TARGET_1500' => '12.0',
-#    'TVOS_DEPLOYMENT_TARGET_1600' => '12.0',
-#    'TVOS_DEPLOYMENT_TARGET' => '$(TVOS_DEPLOYMENT_TARGET_$(XCODE_VERSION_MAJOR))',
-#  }
   
 end

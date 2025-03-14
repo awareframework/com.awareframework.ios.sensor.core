@@ -1,10 +1,6 @@
 # AWARE: Core 
 
-[![CI Status](https://img.shields.io/travis/awareframework/com.awareframework.ios.sensor.core.svg?style=flat)](https://travis-ci.org/awareframework/com.awareframework.ios.sensor.core)
-[![Version](https://img.shields.io/cocoapods/v/com.awareframework.ios.sensor.core.svg?style=flat)](https://cocoapods.org/pods/com.awareframework.ios.sensor.core)
-[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
-[![License](https://img.shields.io/cocoapods/l/com.awareframework.ios.sensor.core.svg?style=flat)](https://cocoapods.org/pods/com.awareframework.ios.sensor.core)
-[![Platform](https://img.shields.io/cocoapods/p/com.awareframework.ios.sensor.core.svg?style=flat)](https://cocoapods.org/pods/com.awareframework.ios.sensor.core)
+[![Swift Package Manager compatible](https://img.shields.io/badge/Swift%20Package%20Manager-compatible-brightgreen.svg)](https://github.com/apple/swift-package-manager)
 
 ## Overview
 com.awareframework.ios.sensor.core provides a basic class for developing your own sensor module on aware framework.
@@ -14,10 +10,24 @@ com.awareframework.ios.sensor.core provides a basic class for developing your ow
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
 ## Requirements
-iOS 10 or later.
+iOS 13 or later.
+
 
 ## Installation
 
+You can integrate this framework into your project via Swift Package Manager (SwiftPM) or CocoaPods.
+
+### SwiftPM
+1. Open Package Manager Windows
+    * Open `Xcode` -> Select `Menu Bar` -> `File` -> `App Package Dependencies...` 
+
+2. Find the package using the manager
+    * Select `Search Package URL` and type `git@github.com:awareframework/com.awareframework.ios.sensor.core.git`
+
+3. Import the package into your target.
+
+
+### CocoaPods
 com.aware.ios.sensor.core is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
@@ -32,7 +42,7 @@ pod 'com.awareframework.ios.sensor.core'
 4. Sync local-database with remote-database
 
 ## Author
-Yuuki Nishiyama, yuukin@iis.u-tokyo.ac.jp
+Yuuki Nishiyama, nishiyama@csis.u-tokyo.ac.jp
 
 ## License
 Copyright (c) 2014 AWARE Mobile Context Instrumentation Middleware/Framework (http://www.awareframework.com)
